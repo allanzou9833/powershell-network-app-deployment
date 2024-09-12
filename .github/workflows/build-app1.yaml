@@ -1,0 +1,25 @@
+name: Build artifact for app1
+on: 
+  push:
+    branches: [main]
+    paths: 'app1/'
+jobs:
+  build_deployment_artifact:
+    name: app1_deployment_artifact
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - with: 
+          sparse-checkout: |
+            admin/app1
+            admin/helpers
+      - run: |
+          mkdir -p release/app1
+          cp -r admin/app1/ release/app1
+          cp -r admin/helpers release/app1/scripts
+      - uses: actions/upload-artifact@v4
+        with: 
+          name: app1-release
+          path: release/app1
+        
+          
