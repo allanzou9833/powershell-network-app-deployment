@@ -15,3 +15,7 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: \\TOWER\allan\powershell-nas-app-test\app1
+      - name: Structure of download
+        run: |
+          ls -R \\TOWER\allan\powershell-nas-app-test\app1
+          pwd
