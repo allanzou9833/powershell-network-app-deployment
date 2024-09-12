@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
-      with:
-        name: app1-release-${{ github.sha }}
-        run-id: ${{ github.event.workflow_run.id }}
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        path: \\TOWER\allan\powershell-nas-app-test\app1
+        with:
+          name: app1-release-${{ github.sha }}
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: \\TOWER\allan\powershell-nas-app-test\app1
