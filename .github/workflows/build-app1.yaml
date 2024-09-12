@@ -2,14 +2,13 @@ name: Build artifact for app1
 on: 
   push:
     branches: [main]
-    paths: 'app1/'
 jobs:
   build_deployment_artifact:
     name: app1_deployment_artifact
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - with: 
+        with: 
           sparse-checkout: |
             admin/app1
             admin/helpers
