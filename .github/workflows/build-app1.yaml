@@ -1,4 +1,4 @@
-name: Build artifact for app1
+name: App1 Build
 on: 
   push:
     branches: [main]
@@ -18,7 +18,7 @@ jobs:
           cp -r admin/helpers release/scripts
       - uses: actions/upload-artifact@v4
         with: 
-          name: app1-release
+          name: app1-release-${{ github.sha }}
           path: release
         
           
