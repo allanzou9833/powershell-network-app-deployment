@@ -13,12 +13,12 @@ jobs:
             admin/app1
             admin/helpers
       - run: |
-          mkdir -p release/app1
-          cp -r admin/app1 release/app1
-          cp -r admin/helpers release/app1/scripts
+          mkdir release
+          cp -r admin/app1/. release
+          cp -r admin/helpers release/scripts
       - uses: actions/upload-artifact@v4
         with: 
           name: app1-release
-          path: release/app1
+          path: release
         
           
