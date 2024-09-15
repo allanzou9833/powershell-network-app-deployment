@@ -10,8 +10,8 @@ jobs:
       - uses: actions/checkout@v4
         with: 
           sparse-checkout: |
-            admin/app1
-            admin/helpers
+            admin/end_user/app1
+            admin/end_user/helpers
       - run: |
           mkdir release
           cp -r admin/app1/. release
